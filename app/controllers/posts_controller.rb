@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show]
   
   def index
+    @posts = Post.all
   end
   
   def new
@@ -9,7 +10,7 @@ class PostsController < ApplicationController
   end
   
   def create
-    @post = Post.new(post_params)
+    @post         = Post.new(post_params)
     @post.user_id = current_user.id
     
     respond_to do |format|
