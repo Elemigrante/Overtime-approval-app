@@ -3,12 +3,8 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   describe 'creation' do
     before do
-      @user = User.create!(email:                 'test@test.com',
-                           password:              'asdfasdf',
-                           password_confirmation: 'asdfasdf',
-                           first_name:            'John',
-                           last_name:             'Wick')
-      @post = Post.create(date: Date.today, rationale: 'Anything')
+      @user      = FactoryBot.create(:user)
+      @post      = FactoryBot.create(:post)
       @post.user = @user
     end
     
@@ -17,7 +13,7 @@ RSpec.describe Post, type: :model do
     end
     
     it 'cannot be created without a date and rationale' do
-      @post.date = nil
+      @post.date      = nil
       @post.rationale = nil
       expect(@post).to_not be_valid
     end
