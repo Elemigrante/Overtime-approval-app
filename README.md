@@ -16,3 +16,11 @@
 
 ## UI
 - Bootstrap -> formatting
+
+## How to launch
+- bundle
+- rails db:migrate
+- rails db:setup
+- rails db:seed
+- yarn add bootstrap jquery popper.js
+- add `import "bootstrap";` in application.js and then `@import "bootstrap";` in application.scss
