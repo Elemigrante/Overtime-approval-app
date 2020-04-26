@@ -22,5 +22,6 @@
 - rails db:migrate
 - rails db:setup
 - rails db:seed
+- yarn install
 - yarn add bootstrap jquery popper.js
 - add `import "bootstrap";` in application.js and then `@import "bootstrap";` in application.scss
