@@ -38,7 +38,7 @@ class PostsController < ApplicationController
   def destroy
     @post.delete
     respond_to do |format|
-      format.html { redirect_to posts_path, notice: 'Post was successfully deleted.' }
+      format.html { redirect_to posts_path, alert: 'Post was successfully deleted.' }
     end
   end
   

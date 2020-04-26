@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Overtime</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Overtime</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <%= render 'shared/nav' %>
-        <%= yield %>
-      </div>
+<body>
+<div class="container">
+  <%= bootstrap_flash%>
+
+<!--    <div class="alert  alert-dismissible fade show" role="alert">-->
+<!--      <button type="button" class="close" data-dismiss="alert" aria-label="Close">-->
+<!--        <span aria-hidden="true">&times;</span>-->
+<!--      </button>-->
+<!--    </div>-->
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= render 'shared/nav' %>
+      <%= yield %>
     </div>
   </div>
-  </body>
+</div>
+</body>
 </html>
