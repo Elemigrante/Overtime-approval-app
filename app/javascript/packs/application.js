@@ -9,7 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 
 import "bootstrap"
-import "../../assets/stylesheets/application.scss"
+import "animate.css"
+import "../stylesheets/application_extended.scss"
 
 document.addEventListener("turbolinks:load", () => {
     $('[data-toggle="tooltip"]').tooltip()
