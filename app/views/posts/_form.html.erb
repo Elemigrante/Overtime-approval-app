@@ -1,7 +1,16 @@
-<%= form_with model: @post do |f| %>
+<%= form_with model: @post, local: true do |f| %>
+
+  <% if @post.errors.any? %>
+    <div class="alert alert-danger animated flash slower w-25" role="alert" id="error_explanation">
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </div>
+  <% end %>
+
 
   <div class="form-group">
-      <%= f.date_field :date, class: 'form-control' %>
+    <%= f.date_field :date, class: 'form-control' %>
   </div>
 
   <div class="form-group">
