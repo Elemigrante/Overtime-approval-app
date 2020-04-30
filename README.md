@@ -19,6 +19,7 @@
 
 ## How to launch
 - bundle
+- yarn install --check-files
 - rails db:migrate
 - rails db:setup
 - rails db:seed
