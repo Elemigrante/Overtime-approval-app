@@ -11,18 +11,16 @@
 - Approval Workflow
 - SMS Sending -> link to approval or overtime input
 - Administrate admin dashbord
+- Block non admin and guest users
 - Email summary to managers for approval
 - Needs to be documented if employee did not log overtime
 
 ## UI
 - Bootstrap -> formatting
+- Update the styles for forms
 
 ## How to launch
 - bundle
 - yarn install --check-files
 - rails db:migrate
 - rails db:setup
-- rails db:seed
-- yarn install
-- yarn add bootstrap jquery popper.js
-- add `import "bootstrap";` in application.js and then `@import "bootstrap";` in application.scss
