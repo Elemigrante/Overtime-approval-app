@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Posts', type: :feature do
   
   describe 'navigate to' do
-    let(:user) {FactoryBot.create(:user)}
+    let(:user) { FactoryBot.create(:user) }
     
     before do
       login_as(user, scope: :user)
@@ -22,12 +22,23 @@ RSpec.feature 'Posts', type: :feature do
       end
       
       it 'has a title of Posts' do
-        expect(page).to have_text("Posts")
+        expect(page).to have_text(/Posts/)
       end
       
       it 'has a list of posts' do
         visit posts_path
         expect(page).to have_text(/Rationale|content/)
+      end
+      
+      it 'does not show posts from other users' do
+        another_user           = FactoryBot.create(:another_user)
+        post_from_another_user = FactoryBot.create(:post,
+                                                   user: another_user,
+                                                   rationale: "This post shouldn't be seen"
+        )
+        
+        visit posts_path
+        expect(page).to have_no_text(/This post shouldn't be seen/)
       end
     end
     
@@ -42,10 +53,10 @@ RSpec.feature 'Posts', type: :feature do
     
     describe 'delete' do
       let!(:post) { FactoryBot.create(:post, user: user) }
-
+      
       it "has a link to delete" do
         visit posts_path
-  
+        
         expect(page).to have_link("", href: post_path(post))
       end
       
