@@ -13,14 +13,25 @@ RSpec.feature 'Approval workflow' do
       visit edit_post_path(post)
     end
     
-    it 'can not be eddited by a non admin' do
+    it 'cannot be eddited by a non admin' do
       logout :user
       user = FactoryBot.create(:user)
       login_as(user, scope: :user)
 
       visit edit_post_path(post)
-
+      
       expect(page).to have_no_content("Submitted")
+    end
+    
+    it 'cannot be editable by post creator if status is approved' do
+      logout :user
+      user = FactoryBot.create(:user)
+      login_as(user, scope: :user)
+      
+      post.update(user_id: user.id, status: 'approved')
+      visit edit_post_path(post)
+      
+      expect(current_path).to eq(root_path)
     end
     
     context "when it have submitted status" do
