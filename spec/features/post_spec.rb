@@ -33,7 +33,7 @@ RSpec.feature 'Posts', type: :feature do
       it 'does not show posts from other users' do
         another_user           = FactoryBot.create(:another_user)
         post_from_another_user = FactoryBot.create(:post,
-                                                   user: another_user,
+                                                   user:      another_user,
                                                    rationale: "This post shouldn't be seen"
         )
         
@@ -68,7 +68,7 @@ RSpec.feature 'Posts', type: :feature do
       end
     end
     
-    describe 'creation' do
+    describe 'create' do
       before do
         visit new_post_path
       end
@@ -80,14 +80,16 @@ RSpec.feature 'Posts', type: :feature do
       it 'can be created from new form page' do
         fill_in 'post[date]', with: Date.today
         fill_in 'post[rationale]', with: 'Anything rationale'
-        click_button 'Save'
+        fill_in 'post[overtime_request]', with: 4.5
         
-        expect(page).to have_text('Anything rationale')
+        expect { click_button 'Save' }.to change(Post, :count).by(1)
       end
       
       it 'will have a user associated it' do
         fill_in 'post[date]', with: Date.today
         fill_in 'post[rationale]', with: 'User Association'
+        fill_in 'post[overtime_request]', with: 4.5
+        
         click_button 'Save'
         
         expect(User.last.posts.last.rationale).to eq('User Association')
