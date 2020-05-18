@@ -14,6 +14,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'administrate', '~> 0.13.0'
 gem 'pundit', '~> 2.1'
+gem 'font-awesome-sass', '~> 5.12.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

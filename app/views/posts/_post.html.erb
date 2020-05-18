@@ -19,10 +19,10 @@
       <%= status_badge post.status %>
     </td>
     <td>
-      <%= link_to 'Edit', edit_post_path(post), id: "edit_#{post.id}" if policy(post).update? %>
+      <%= link_to icon('fas', 'edit', class: 'index-icons edit'), edit_post_path(post), id: "edit_#{post.id}" if policy(post).update? %>
     </td>
     <td>
-      <%= link_to 'Delete', post_path(post), method: :delete, id: "delete_post_#{post.id}", data: { confirm: "Are you sure?" } %>
+      <%= link_to icon('fas', 'trash', class: 'index-icons trash'), post_path(post), method: :delete, id: "delete_post_#{post.id}", data: { confirm: "Are you sure?" } %>
     </td>
   </tr>
 <% end %>
