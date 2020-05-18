@@ -7,8 +7,8 @@
     <% end %>
   <% end %>
 
-  <div class="form-group" data-toggle="popover" data-content="Overtime requested hours">
-    <%= f.text_field :overtime_request, class: 'form-control'%>
+  <div class="form-group" data-toggle="tooltip" data-placement="right" title="Overtime requested hours">
+    <%= f.text_field :overtime_request, class: 'form-control' %>
   </div>
 
   <div class="form-group">
@@ -19,7 +19,7 @@
     <%= f.text_area :rationale, class: 'form-control', rows: 10, placeholder: 'Rationale' %>
   </div>
 
-  <%= render partial: 'status', locals: {f: f} if current_user.type == 'AdminUser' %>
+  <%= render partial: 'status', locals: { f: f } if current_user.type == 'AdminUser' %>
 
   <div class="form_group">
     <%= f.submit 'Save', class: 'btn btn-primary' %>
