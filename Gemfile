@@ -25,6 +25,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 5.1', '>= 5.1.1'
   gem 'faker'
+  gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
 end
 
 group :development do
