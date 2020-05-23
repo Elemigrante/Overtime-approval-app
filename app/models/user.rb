@@ -5,6 +5,11 @@ class User < ApplicationRecord
   
   validates :first_name, :last_name, :phone, presence: true
   
+  validates :phone,
+            format: { with:    /\A[0-9]*\z/,
+                      message: "only allows integers" },
+            length: { is: 10 }
+  
   def full_name
     "#{last_name.upcase}, #{first_name.upcase}"
   end
