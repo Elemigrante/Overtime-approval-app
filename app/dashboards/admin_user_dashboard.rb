@@ -15,7 +15,9 @@ class AdminUserDashboard < Administrate::BaseDashboard
     last_name: Field::String.with_options(searchable: false),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
-    type: Field::String.with_options(searchable: false)
+    type: Field::String.with_options(searchable: false),
+    phone: Field::String.with_options(searchable: false)
+  
   }.freeze
   
   COLLECTION_ATTRIBUTES = %i[
@@ -28,6 +30,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
   posts
   id
   email
+  phone
   first_name
   last_name
   sign_in_count
@@ -45,6 +48,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
   password
   first_name
   last_name
+  phone
   type
   ].freeze
   

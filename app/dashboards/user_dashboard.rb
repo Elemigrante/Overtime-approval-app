@@ -16,7 +16,8 @@ class UserDashboard < Administrate::BaseDashboard
     last_name: Field::String.with_options(searchable: false),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
-    type: Field::String.with_options(searchable: false)
+    type: Field::String.with_options(searchable: false),
+    phone: Field::String.with_options(searchable: false)
   }.freeze
   
   COLLECTION_ATTRIBUTES = %i[
@@ -28,6 +29,7 @@ class UserDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   posts
   email
+  phone
   first_name
   last_name
   created_at
@@ -40,6 +42,7 @@ class UserDashboard < Administrate::BaseDashboard
   password
   first_name
   last_name
+  phone
   ].freeze
   
   COLLECTION_FILTERS = {}.freeze
