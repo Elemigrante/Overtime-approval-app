@@ -1,11 +1,19 @@
 <% @audit_log.each do |al| %>
   <tr>
     <td>
+      <%= al.id %>
+    </td>
+    <td>
       <%= al.user.full_name %>
     </td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>
+      <%= al.start_date %>
+    </td>
+    <td>
+      <%= al.end_date %>
+    </td>
+    <td>
+      <%= al.status %>
+    </td>
   </tr>
 <% end %>
