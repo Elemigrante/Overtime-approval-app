@@ -29,7 +29,7 @@ end
 puts '50 Posts have been created'
 
 50.times do |audit_log|
-  AuditLog.create(user_id:    User.last.id,
+  AuditLog.create(user_id:    @user.id,
                   status:     0,
                   start_date: Date.today - 6.days
   )
