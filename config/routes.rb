@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  resources :audit_logs
+  
   namespace :admin do
-      resources :users
-      resources :admin_users
-      resources :posts
-
-      root to: "users#index"
+    resources :users
+    resources :admin_users
+    resources :posts
+    
+    root to: "users#index"
   end
+
+  resources :audit_logs, except: %i[:new :edit :destroy]
   
   resources :posts
   devise_for :users, skip: [:registrations]
