@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def admin_types
+    ['AdminUser']
+  end
+  
   def active?(path)
     "active" if current_page?(path)
   end
@@ -23,17 +27,5 @@ module ApplicationHelper
         content_tag(:span, status.titleize, class: 'badge badge-success')
     end
   end
-    
-    # Bootstrap default allert helper
-    # def custom_bootstrap_flash
-    #   flash_messages = []
-    #   flash.each do |type, message|
-    #     type = 'info'
-    #     type = 'success' if type == 'notice'
-    #     type = 'error'   if type == 'alert'
-    #     text = "<script>toastr.#{type}('#{message}');</script>"
-    #     flash_messages << text.html_safe if message
-    #   end
-    #   flash_messages.join("\n").html_safe
-    # end
+
 end
