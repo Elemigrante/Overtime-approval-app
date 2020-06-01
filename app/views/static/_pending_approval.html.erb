@@ -1,0 +1,29 @@
+<% pending_approvals.each do |pa| %>
+  <div class="col-md-4 mb-3">
+    <div class="card bg-info border-dark h-100">
+      <div class="card-header text-light bg-dark">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <span class="pending-details"><%= pa.user.full_name %></span>
+            </div>
+            <div class="col-md-2" data-toggle="tooltip" data-placement="top" title="Approve">
+              <%= link_to icon('fas', 'check-circle', class: 'index-icons check-circle'), root_path %>
+            </div>
+            <div class="col-md-2" data-toggle="tooltip" data-placement="top" title="Review">
+              <%= link_to icon('fas', 'eye', class: 'index-icons eye'), root_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body text-light mb-2">
+        <p class="card-text">
+          <span class="pending-details">Date submitted:</span> <%= pa.date %>
+        </p>
+        <p class="card-text">
+          <span class="pending-details">Rationale:</span> <%= truncate pa.rationale, length: 50 %>
+        </p>
+      </div>
+    </div>
+  </div>
+<% end %>

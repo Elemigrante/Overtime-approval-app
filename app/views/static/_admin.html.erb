@@ -1,3 +1,9 @@
-<h1>
-  Hi Admin
-</h1>
+<h2>Items Pending Your Approval</h2>
+<hr>
+<div class="card bg-light p-4">
+  <div class="container">
+    <div class="row">
+      <%= render partial: 'pending_approval', locals: { pending_approvals: @pending_approvals } %>
+    </div>
+  </div>
+</div>

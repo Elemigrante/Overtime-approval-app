@@ -18,9 +18,9 @@ AdminUser.create!(email:                 'admin@user.com',
 
 puts '1 Admin User created'
 
-50.times do |post|
+100.times do |post|
   Post.create(date:             Date.today,
-              rationale:        Faker::Lorem.sentence,
+              rationale:        Faker::Lorem.paragraph,
               user_id:          @user.id,
               overtime_request: 2.5
   )
