@@ -8,10 +8,10 @@
               <span class="pending-details"><%= pa.user.full_name %></span>
             </div>
             <div class="col-md-2" data-toggle="tooltip" data-placement="top" title="Approve">
-              <%= link_to icon('fas', 'check-circle', class: 'index-icons check-circle'), root_path %>
+              <%= link_to icon('fas', 'check-circle', class: 'index-icons check-circle'), approve_post_path(pa), id: "approve_#{pa.id}" %>
             </div>
             <div class="col-md-2" data-toggle="tooltip" data-placement="top" title="Review">
-              <%= link_to icon('fas', 'eye', class: 'index-icons eye'), root_path %>
+              <%= link_to icon('fas', 'eye', class: 'index-icons eye'), edit_post_path(pa) %>
             </div>
           </div>
         </div>

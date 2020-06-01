@@ -3,6 +3,10 @@ class PostPolicy < ApplicationPolicy
     return true if record.approved? && admin?
     return true if user_or_admin && !post_approved?
   end
+
+  def approve?
+    admin?
+  end
   
   private
   
