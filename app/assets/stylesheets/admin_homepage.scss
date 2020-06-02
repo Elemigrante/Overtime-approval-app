@@ -12,6 +12,10 @@
   }
 }
 
-.card:hover {
+.card-pend:hover {
+  background-color: rgb(36, 154, 232);
+}
+
+.card-conf:hover {
   background-color: rgb(36, 154, 232);
 }
