@@ -1,9 +1,31 @@
-<h2>Items Pending Your Approval</h2>
-<hr>
+<div class="card bg-light p-4 mb-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Items Pending Your Approval</h2>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <%= render partial: 'pending_approval', locals: { pending_approvals: @pending_approvals } %>
+    </div>
+  </div>
+</div>
+
 <div class="card bg-light p-4">
   <div class="container">
     <div class="row">
-      <%= render partial: 'pending_approval', locals: { pending_approvals: @pending_approvals } %>
+      <div class="col-md-10">
+        <h2>Confirmation Log</h2>
+      </div>
+      <div class="col-md-2">
+        <%= link_to 'View All Items', audit_logs_path, class: 'btn btn-dark btn-block' %>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <%= render partial: 'confirmation_log', locals: { recent_audit_items: @recent_audit_items } %>
     </div>
   </div>
 </div>

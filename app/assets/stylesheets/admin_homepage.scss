@@ -1,3 +1,17 @@
 .pending-details {
   font-weight: 700;
 }
+
+.card {
+  .card-conf {
+    background-color: #3a9275;
+  }
+
+  .card-pend {
+    background-color: #075579;
+  }
+}
+
+.card:hover {
+  background-color: rgb(36, 154, 232);
+}

@@ -1,0 +1,22 @@
+<% recent_audit_items.each do |rai| %>
+  <div class="col-md-4 mb-3">
+    <div class="card card-conf border-dark h-100">
+      <div class="card-header text-light bg-dark">
+        <div class="col-md-12">
+          <span class="pending-details"><%= rai.user.full_name %></span>
+        </div>
+      </div>
+      <div class="card-body text-light mb-2">
+        <p class="card-text">
+          <span class="pending-details">Week Starting:</span> <%= rai.start_date %>
+        </p>
+        <p class="card-text">
+          <span class="pending-details">Confirmed at:</span> <%= rai.end_date || status_badge("pending") %>
+        </p>
+        <p class="card-text">
+          <span class="pending-details">Status:</span> <%= status_badge rai.status %>
+        </p>
+      </div>
+    </div>
+  </div>
+<% end %>
