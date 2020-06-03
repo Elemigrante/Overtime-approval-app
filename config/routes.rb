@@ -8,7 +8,11 @@ Rails.application.routes.draw do
     root to: "users#index"
   end
   
-  resources :audit_logs, except: %i[:new :edit :destroy]
+  resources :audit_logs, except: %i[:new :edit :destroy] do
+    member do
+      get :confirm
+    end
+  end
   
   resources :posts do
     member do
