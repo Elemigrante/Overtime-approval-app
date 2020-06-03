@@ -1,11 +1,27 @@
+<% if @pending_audit_confirmations.count > 0 %>
+  <div class="card bg-light p-4 mb-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Pending Your Confirmation</h2>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <%= render partial: 'pending_audit_confirmation', locals: { pending_audit_confirmations: @pending_audit_confirmations } %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <div class="card bg-light p-4">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h2>Pending Your Confirmation</h2>
-        <hr>
-        <%= render partial: 'pending_audit_confirmation', locals: { pending_audit_confirmations: @pending_audit_confirmations } %>
+        <h2>Request Overtime Approval</h2>
       </div>
     </div>
+    <hr>
+    <%= link_to 'Request Overtime Approval', new_post_path, class: 'btn btn-info btn-block btn-lg' %>
   </div>
 </div>
