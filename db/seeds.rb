@@ -40,7 +40,15 @@ puts '3 AuditLogs have been created'
 
 100.times do |post|
   Post.create(date:             Date.today,
-              rationale:        Faker::Lorem.paragraph,
+              rationale:        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                 Cras sit amet ex egestas, ultricies augue in, sollicitudin quam. Donec suscipit feugiat iaculis.
+                                 Donec vitae ante pharetra, pulvinar eros non, euismod magna. Nullam mollis est at tellus egestas fringilla.
+                                 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+                                 Ut blandit euismod nulla at sollicitudin. Donec pharetra odio et tortor venenatis porta.
+                                 Praesent ac ante non sem elementum tempus in pretium neque. Sed ac turpis ligula.
+                                 Donec enim augue, suscipit eu dapibus sed, bibendum at velit. Sed bibendum gravida nisi nec mollis.
+                                 Donec odio lorem, vulputate sollicitudin dignissim feugiat, facilisis eu neque. Ut eu nisi ultricies, vestibulum lorem sed, tristique sem.
+                                 Nullam malesuada felis vitae eleifend cursus. Vivamus aliquam est lectus, nec lacinia nibh volutpat sit amet.',
               user_id:          @user.id,
               overtime_request: 2.5
   )
