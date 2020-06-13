@@ -1,11 +1,11 @@
-@user = User.create!(email: 'test@test.com',
-                     password: 'asdfasdf',
-                     password_confirmation: 'asdfasdf',
-                     first_name: 'John',
-                     last_name: 'Wick',
-                     phone: '2067372644')
+@employee = Employee.create!(email: 'test@test.com',
+                             password: 'asdfasdf',
+                             password_confirmation: 'asdfasdf',
+                             first_name: 'John',
+                             last_name: 'Wick',
+                             phone: '9215506874')
 
-puts '1 User created'
+puts '1 Employee created'
 
 AdminUser.create!(email: 'admin@user.com',
                   first_name: 'Admin',
@@ -16,15 +16,15 @@ AdminUser.create!(email: 'admin@user.com',
 
 puts '1 Admin User created'
 
-AuditLog.create(user_id: @user.id,
+AuditLog.create(user_id: @employee.id,
                 status: 0,
                 start_date: Date.today - 6.days)
 
-AuditLog.create(user_id: @user.id,
+AuditLog.create(user_id: @employee.id,
                 status: 0,
                 start_date: Date.today - 13.days)
 
-AuditLog.create(user_id: @user.id,
+AuditLog.create(user_id: @employee.id,
                 status: 0,
                 start_date: Date.today - 20.days)
 
@@ -38,7 +38,7 @@ puts '3 AuditLogs have been created'
                           egestas fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
                           per inceptos himenaeos. Ut blandit euismod nulla at sollicitudin. Donec pharetra odio
                           et tortor venenatis porta.',
-              user_id: @user.id,
+              user_id: @employee.id,
               overtime_request: 2.5)
 end
 
